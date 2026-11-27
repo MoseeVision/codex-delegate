@@ -1,0 +1,24 @@
+﻿# codex-delegate
+
+Antigravity to OpenAI Codex App Server bridge with 2-concurrency process pool, thread affinity (KV cache persistence), and read-only delegation.
+
+## Features
+- **Process Pool Concurrency**: Strictly limited to 2 concurrent tasks.
+- **Thread Affinity**: Routes follow-up turns to the matching process instance for KV cache reuse.
+- **Read-Only Safety**: Defaults to read-only workspace mode.
+- **Slice Window & Wait**: Automatically hands off long-running operations via codex_wait.
+- **Default Tier**: Standard tier by default to conserve quota.
+
+## Setup
+Run the installation script to deploy into your local \.gemini\ directory:
+\\\powershell
+powershell -ExecutionPolicy Bypass -File .\install.ps1
+\\\
+"@ | Set-Content "C:\Users\MoseeVision\.gemini\antigravity\scratch\codex-delegate\README.md" -Encoding UTF8
+
+@"
+last_threads.json
+*.bak
+*.log
+node_modules/
+.DS_Store
